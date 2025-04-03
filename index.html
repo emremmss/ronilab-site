@@ -1,27 +1,198 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ronilab - Yakında Hizmetinizde</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: white;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronilab | Mühendislik & 3D Baskı Hizmetleri</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header, nav, section {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    section {
+      background-color: #fff;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    h1, h2 {
+      color: #003366;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    nav {
+      background-color: #003366;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form input:focus, form textarea:focus, form select:focus {
+      border-color: #003366;
+      outline: none;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #005599;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Yakında burada Ronilab olarak hizmet vermeye başlayacağız!</h1>
+
+  <nav>
+    <a href="#anasayfa">Anasayfa</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#referanslar">Referanslar</a>
+    <a href="#iletisim">İletişim</a>
+    <a href="#teklif-formu">Teklif Al</a>
+  </nav>
+
+  <section id="anasayfa">
+    <h1>Ronilab Mühendislik ve 3D Baskı Hizmetleri</h1>
+    <p>Ronilab Mühendislik ve 3D Baskı Hizmetleri olarak yenilikçi mühendislik çözümleri ve yüksek kaliteli prototipleme hizmetleri sunuyoruz. Profesyonel ekip ve ileri teknolojiye sahip ekipmanlarımızla müşterilerimize özel üretim, hızlı prototipleme ve mühendislik çözümleri sağlıyoruz.</p>
+    <h2>Öne Çıkan Hizmetlerimiz</h2>
+    <ul>
+      <li>3D Baskı ve Reçine Baskı Hizmetleri</li>
+      <li>Mum Prototip Üretimi</li>
+      <li>Otomotiv Yedek Parça Üretimi</li>
+      <li>Tersine Mühendislik ve CAD Modelleme</li>
+      <li>Mühendislik Danışmanlık Hizmetleri</li>
+    </ul>
+    <h2>Neden Ronilab?</h2>
+    <ul>
+      <li>Uzman ve deneyimli mühendis kadrosu</li>
+      <li>Son teknoloji cihaz ve yazılımlar</li>
+      <li>Yüksek kalite, hızlı teslimat ve rekabetçi fiyatlandırma</li>
+      <li>Müşteri memnuniyeti odaklı yaklaşım</li>
+    </ul>
+  </section>
+
+  <section id="hakkimizda">
+    <h1>Hakkımızda</h1>
+    <p>Ronilab, mühendislik ve 3D baskı teknolojilerinde sürdürülebilirlik ve yenilik odaklı çözümler sunmak amacıyla kurulmuştur. Müşteri ihtiyaçlarını doğru analiz ederek, güvenilir ve yenilikçi çözümler sunmak temel önceliğimizdir.</p>
+    <h2>Misyonumuz</h2>
+    <p>Teknoloji ve mühendisliği harmanlayarak sürdürülebilir, hızlı ve ekonomik çözümler üretmek.</p>
+    <h2>Vizyonumuz</h2>
+    <p>Türkiye’nin öncü mühendislik ve 3D prototip üretim şirketlerinden biri olmak ve uluslararası alanda tanınan bir marka haline gelmek.</p>
+    <h2>Uzmanlık Alanlarımız</h2>
+    <ul>
+      <li>Hızlı Prototipleme</li>
+      <li>3D Baskı Teknolojileri</li>
+      <li>Tersine Mühendislik</li>
+      <li>CAD Modelleme</li>
+      <li>Otomotiv ve Endüstriyel Parça Üretimi</li>
+    </ul>
+  </section>
+
+  <section id="hizmetler">
+    <h1>Hizmetlerimiz</h1>
+    <h2>3D Baskı Hizmeti</h2>
+    <p>Son teknoloji 3D baskı ekipmanlarımızla yüksek çözünürlüklü, dayanıklı ve hassas parçalar üretiyoruz.</p>
+    <h2>Reçine (Resin) Baskı Hizmeti</h2>
+    <p>Reçine baskı teknolojisi ile ince detaylı, yüksek kaliteli ve pürüzsüz yüzeylere sahip prototip ve modeller elde edin.</p>
+    <h2>Mum Prototip Üretimi</h2>
+    <p>Kuyumculuk, dental ve hassas döküm uygulamaları için yüksek doğrulukta mum prototip üretimi sağlıyoruz.</p>
+    <h2>Otomotiv Yedek Parça Üretimi</h2>
+    <p>Yüksek hassasiyet gerektiren otomotiv parçalarını hızlı ve ekonomik şekilde üretiyoruz.</p>
+    <h2>Tersine Mühendislik ve CAD Modelleme Hizmeti</h2>
+    <p>Mevcut parçalarınızı dijital ortamda analiz ederek, CAD ortamına aktarıyor ve yeniden üretilebilir hale getiriyoruz.</p>
+    <h2>Mühendislik Danışmanlık Hizmetleri</h2>
+    <p>Projeleriniz için uzman mühendis ekibimizle tasarım, analiz ve üretim süreçlerinde danışmanlık sağlıyoruz.</p>
+  </section>
+
+  <section id="referanslar">
+    <h1>Referanslarımız veya Projelerimiz</h1>
+    <p>(Yakında Güncellenecektir)</p>
+  </section>
+
+  <section id="iletisim">
+    <h1>İletişim Bilgileri</h1>
+    <p><strong>Adres:</strong> İstanbul - Kartal</p>
+    <p><strong>Telefon:</strong> +90 543 2856445</p>
+    <p><strong>E-posta:</strong> info@ronilab.com</p>
+    <p><strong>Harita:</strong> https://maps.app.goo.gl/ZYmbsE8Km9LtZzAN9 </p>
+  </section>
+
+  <section id="teklif-formu">
+    <h1>Teklif ve Sipariş Formu</h1>
+      <form action="https://formsubmit.co/info@ronilab.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Yeni Teklif Talebi">
+      
+        <label>Adınız Soyadınız:<br><input type="text" name="adsoyad" required></label><br><br>
+        <label>Firma Adı:<br><input type="text" name="firma"></label><br><br>
+        <label>Telefon:<br><input type="tel" name="telefon" required></label><br><br>
+        <label>E-posta:<br><input type="email" name="email" required></label><br><br>
+      
+        <label>Hizmet Türü:<br>
+          <select name="hizmet">
+            <option>3D Baskı</option>
+            <option>Reçine Baskı</option>
+            <option>Mum Prototip</option>
+            <option>Otomotiv Yedek Parça</option>
+            <option>Tersine Mühendislik</option>
+            <option>Mühendislik Danışmanlık</option>
+          </select>
+        </label><br><br>
+      
+        <label>Proje Açıklaması:<br><textarea name="aciklama"></textarea></label><br><br>
+        <label>Özel Notlarınız:<br><textarea name="notlar"></textarea></label><br><br>
+      
+        <button type="submit">Gönder</button>
+      </form>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Ronilab Mühendislik. Tüm hakları saklıdır.</p>
+  </footer>
+
 </body>
 </html>
