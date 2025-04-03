@@ -162,25 +162,32 @@
 
   <section id="teklif-formu">
     <h1>Teklif ve Sipariş Formu</h1>
-    <form>
-      <label>Adınız Soyadınız:<br><input type="text" name="adsoyad"></label><br><br>
-      <label>Firma Adı:<br><input type="text" name="firma"></label><br><br>
-      <label>Telefon:<br><input type="tel" name="telefon"></label><br><br>
-      <label>E-posta:<br><input type="email" name="email"></label><br><br>
-      <label>Hizmet Türü:<br>
-        <select name="hizmet">
-          <option>3D Baskı</option>
-          <option>Reçine Baskı</option>
-          <option>Mum Prototip</option>
-          <option>Otomotiv Yedek Parça</option>
-          <option>Tersine Mühendislik</option>
-          <option>Mühendislik Danışmanlık</option>
-        </select>
-      </label><br><br>
-      <label>Proje Açıklaması:<br><textarea name="aciklama"></textarea></label><br><br>
-      <label>Özel Notlarınız:<br><textarea name="notlar"></textarea></label><br><br>
-      <button type="submit">Gönder</button>
-    </form>
+      <form action="https://formsubmit.co/info@ronilab.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Yeni Teklif Talebi">
+      
+        <label>Adınız Soyadınız:<br><input type="text" name="adsoyad" required></label><br><br>
+        <label>Firma Adı:<br><input type="text" name="firma"></label><br><br>
+        <label>Telefon:<br><input type="tel" name="telefon" required></label><br><br>
+        <label>E-posta:<br><input type="email" name="email" required></label><br><br>
+      
+        <label>Hizmet Türü:<br>
+          <select name="hizmet">
+            <option>3D Baskı</option>
+            <option>Reçine Baskı</option>
+            <option>Mum Prototip</option>
+            <option>Otomotiv Yedek Parça</option>
+            <option>Tersine Mühendislik</option>
+            <option>Mühendislik Danışmanlık</option>
+          </select>
+        </label><br><br>
+      
+        <label>Proje Açıklaması:<br><textarea name="aciklama"></textarea></label><br><br>
+        <label>Özel Notlarınız:<br><textarea name="notlar"></textarea></label><br><br>
+      
+        <button type="submit">Gönder</button>
+      </form>
+
   </section>
 
   <footer>
