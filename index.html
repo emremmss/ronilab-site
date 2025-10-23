@@ -56,6 +56,14 @@
 
     footer{padding:28px 0;color:var(--muted);border-top:var(--border);font-size:14px;text-align:center}
   </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-03MKEF4E3X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-03MKEF4E3X'); // G- ile başlayan GA4 ölçüm kimliğini buraya gir
+</script>
 </head>
 <body>
   <header>
@@ -131,3 +139,49 @@
   </script>
 </body>
 </html>
+
+<!-- robots.txt -->
+<!-- Bu dosyayı repo kök dizinine 'robots.txt' adıyla ekle -->
+<!--
+User-agent: *
+Allow: /
+Sitemap: https://www.ronilab.com/sitemap.xml
+-->
+
+<!-- sitemap.xml -->
+<!-- Bu dosyayı repo kök dizinine 'sitemap.xml' adıyla ekle -->
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.ronilab.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>
+-->
+
+<!-- structured data / schema.org -->
+<!-- Aşağıdaki script'i <head> etiketinin sonuna veya body sonunda ekleyebilirsin -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ronilab",
+  "url": "https://www.ronilab.com",
+  "logo": "https://www.ronilab.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hürriyet Mahallesi Berrak Sokak No:6",
+    "addressLocality": "Kartal",
+    "addressRegion": "İstanbul",
+    "addressCountry": "TR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+905432856445",
+    "email": "info@ronilab.com",
+    "contactType": "customer support"
+  }
+}
+</script>
