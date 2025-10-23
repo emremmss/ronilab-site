@@ -11,6 +11,24 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
   <link rel="canonical" href="https://www.ronilab.com/" />
+  <!-- Performance hint for GA -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  
+  <!-- Safety redirect: fix common host typos/non-www -->
+  <script>
+    (function(){
+      var h = location.hostname.toLowerCase();
+      // if user lands on 'ww.ronilab.com' (missing a 'w') => redirect to 'www'
+      if (h === 'ww.ronilab.com') {
+        location.replace(location.href.replace('ww.ronilab.com','www.ronilab.com'));
+      }
+      // optionally normalize apex to www for a single canonical host
+      if (h === 'ronilab.com') {
+        location.replace(location.href.replace('ronilab.com','www.ronilab.com'));
+      }
+    })();
+  </script>
   <style>
     :root{
       --bg:#ffffff;
@@ -144,7 +162,7 @@
   </main>
 
   <footer>
-    <div class="container">© <span id="y"></span> Ronilab • Tüm hakları saklıdır. • <a href="https://ronilab.com">ronilab.com</a></div>
+    <div class="container">© <span id="y"></span> Ronilab • Tüm hakları saklıdır. • <a href="https://www.ronilab.com">www.ronilab.com</a></div>
   </footer>
 
   <script>
