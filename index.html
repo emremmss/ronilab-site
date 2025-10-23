@@ -186,7 +186,7 @@
           </label>
           <div class="viewer" id="viewer" aria-label="3B önizleme alanı"></div>
         </div>
-        <input id="stlInput" type="file" accept=".stl" hidden />
+        <input id="stlInput" type="file" name="stlFiles" accept=".stl" multiple hidden />
         <div class="panel" style="margin-top:16px">
           <form id="customOrderForm">
             <div class="row">
@@ -252,9 +252,9 @@
         <h2 class="section-title">Adres & İletişim</h2>
         <div class="split">
           <div class="panel">
-            <p><strong>Adres:</strong> İstanbul, Türkiye</p>
-            <p><strong>E-posta:</strong> <a href="mailto:hello@ronilab.com">hello@ronilab.com</a></p>
-            <p><strong>Telefon:</strong> <a href="tel:+900000000000">+90 000 000 00 00</a></p>
+            <p><strong>Adres:</strong> Hürriyet Mahallesi Berrak Sokak No: 6, Kartal, İstanbul</p>
+            <p><strong>E-posta:</strong> <a href="mailto:info@ronilab.com">info@ronilab.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+905432856445">0543 285 64 45</a></p>
             <p><a class="btn" href="https://www.openstreetmap.org" target="_blank" rel="noopener">Haritada Aç</a></p>
           </div>
           <div class="panel">
@@ -262,7 +262,7 @@
             <div class="row">
               <a class="btn" href="#">Instagram</a>
               <a class="btn" href="#">LinkedIn</a>
-              <a class="btn" href="https://wa.me/900000000000" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn" href="https://wa.me/905432856445" target="_blank" rel="noopener">WhatsApp</a>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <!-- Uygulama kodu: ES Modules -->
-  <script type="module">
+  <script type="module" id="app-module">
     import * as THREE from 'https://unpkg.com/three@0.159.0/build/three.module.js';
     import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
     import { STLLoader } from 'https://unpkg.com/three@0.159.0/examples/jsm/loaders/STLLoader.js';
@@ -535,9 +535,42 @@
       // snapshot
       $('#snap').addEventListener('click',downloadCanvasPNG);
 
-      // Custom order form (demo submit)
-      $('#customOrderForm').addEventListener('submit',e=>{
-        e.preventDefault(); const data=serialize(e.target); console.log({type:'custom-order', data}); toast('Özel sipariş talebi alındı (demo)'); e.target.reset();
+      // Custom order form (send email with attachments)
+      const MAIL_ENDPOINT = window.RONILAB_MAIL_ENDPOINT || 'https://YOUR_MAIL_ENDPOINT';
+      $('#customOrderForm').addEventListener('submit',async e=>{
+        e.preventDefault();
+        const data=serialize(e.target);
+        const files = Array.from($('#stlInput').files||[]);
+        if(!files.length){ toast('Lütfen en az bir STL dosyası ekleyin'); return; }
+
+        const fd = new FormData();
+        fd.append('to','info@ronilab.com');
+        fd.append('subject',`Özel Sipariş Talebi – ${data.name || 'İsimsiz'}`);
+        fd.append('text',
+          `İsim: ${data.name}
+E-posta: ${data.email}
+Telefon: ${data.phone||'-'}
+Malzeme: ${data.material}
+Yüzey: ${data.finish}
+Renk: ${data.color||'-'}
+Adet: ${data.qty||'1'}
+Maks. Boyut: ${data.maxSize||'-'}
+Notlar: ${data.notes||'-'}
+
+Gönderim tarihi: ${new Date().toLocaleString()}`
+        );
+        files.forEach((f,idx)=> fd.append('attachments', f, f.name||`stl_${idx+1}.stl`));
+
+        try{
+          const res = await fetch(MAIL_ENDPOINT, { method:'POST', body: fd });
+          if(!res.ok) throw new Error(`Mail API hata: ${res.status}`);
+          toast('Özel sipariş talebiniz e-posta ile iletildi');
+          e.target.reset();
+          $('#stlInput').value='';
+        }catch(err){
+          console.error('Mail gönderim hatası', err);
+          toast('Gönderim yapılamadı. Lütfen daha sonra tekrar deneyin.');
+        }
       });
 
       // Checkout (demo submit)
@@ -561,6 +594,23 @@
       updateBadge();
       console.groupEnd();
     });
+  </script>
+  <script>
+    /*
+      ⚙️ Posta Uç Noktası (Serverless) Hakkında
+      - GitHub Pages statik barındırmadır; e-posta ve ek gönderimi için bir serverless uç nokta gerekir.
+      - Bir Cloudflare Worker / Vercel / Netlify Function kurup aşağıdaki sözleşmeyi destekleyin:
+        POST multipart/form-data
+          - to: string (örn. info@ronilab.com)
+          - subject: string
+          - text: string (düz metin içerik)
+          - attachments: File[] (STL dosyaları)
+      - Sunucu tarafında SendGrid / Resend / Mailgun gibi bir hizmet ile maili iletin.
+      - Uç nokta URL’sini sayfaya şuradan sağlayabilirsiniz:
+        1) <script> içinde window.RONILAB_MAIL_ENDPOINT='https://...' atayın ya da
+        2) index.html içinde bu açıklamanın altındaki satırı düzenleyin.
+    */
+    window.RONILAB_MAIL_ENDPOINT = window.RONILAB_MAIL_ENDPOINT || 'https://YOUR_MAIL_ENDPOINT';
   </script>
 </body>
 </html>
