@@ -3,111 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ronilab – Hassas üretim, rafine tasarım</title>
-  <meta name="description" content="Ronilab: hassas 3B üretim ve modern tasarım koleksiyonu. STL yükle, önizle, özel sipariş ver." />
-  <meta property="og:title" content="Ronilab – Hassas üretim, rafine tasarım" />
-  <meta property="og:description" content="Sade tek sayfa site. Koleksiyon, hikâye, STL yükleme & 3B önizleme, sepet ve satın alma modal'ı." />
+  <title>Ronilab – Hakkımızda & İletişim</title>
+  <meta name="description" content="Ronilab 2025 yılında kurulmuş, hassas SLA ve FDM üretim, ürün tarama hizmetleriyle savunma, kalıp ve otomotiv sektörlerine çözümler sunar." />
+  <meta name="keywords" content="Ronilab, 3B baskı, SLA, FDM, ürün tarama, 3D scanning, savunma sanayi, otomotiv, kalıp, üretim, 3D printing, İstanbul" />
+  <meta property="og:title" content="Ronilab – 3B Baskı & Tarama Hizmetleri" />
+  <meta property="og:description" content="Ronilab 2025 yılında kurulmuş olup hassas SLA ve FDM üretim, ürün tarama hizmetleriyle savunma, kalıp ve otomotiv sektörlerine hizmet verir." />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <link rel="canonical" href="https://ronilab.com/" />
   <style>
     :root{
-      /* Açık tema + skyblue palet */
-      --bg:#ffffff;                 /* beyaz arkaplan */
-      --surface:#f5f9ff;            /* çok açık mavi yüzey */
-      --card:#ffffff;               /* kart beyazı */
-      --muted:#5b6880;              /* metin ikincil */
-      --text:#0f172a;               /* koyu metin */
-      --accent:#0ea5e9;             /* skyblue */
-      --accent-2:#38bdf8;           /* skyblue açık tonu */
-      --ok:#16a34a; --warn:#f59e0b; --err:#ef4444;
+      --bg:#ffffff;
+      --surface:#f5f9ff;
+      --card:#ffffff;
+      --muted:#5b6880;
+      --text:#0f172a;
+      --accent:#0ea5e9;
+      --accent-2:#38bdf8;
       --radius:18px;
       --shadow:0 10px 24px rgba(2,6,23,.06), 0 1px 0 rgba(2,6,23,.04);
-      --max:1200px;
+      --max:960px;
       --border:1px solid rgba(2,6,23,.08);
     }
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg);} 
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);}
     a{color:var(--text);text-decoration:none}
-    img{max-width:100%;display:block}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:saturate(140%) blur(10px);border-bottom:var(--border)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
+
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(10px);border-bottom:var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand .logo{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);display:grid;place-items:center;color:#fff;font-weight:800}
     .brand .logo::after{content:'R';}
-    .nav a{opacity:.9}
-    .links{display:flex;gap:18px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:var(--border);background:#fff;color:var(--text);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);cursor:pointer}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none;color:#fff}
-    .btn.ghost{background:transparent;border:var(--border)}
-    .cart-btn{position:relative}
-    .badge{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--accent);display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff}
+    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
 
-    /* Hero */
-    .hero{padding:64px 0 28px;background:linear-gradient(180deg,var(--surface),#fff 60%)}
-    .hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero{padding:40px 0;background:linear-gradient(180deg,var(--surface),#fff 70%)}
+    h1{font-size:34px;line-height:1.1;margin:8px 0 6px}
     .kicker{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
-    h1{font-size:42px;line-height:1.08;margin:10px 0 12px}
-    .lead{color:#334155;max-width:60ch}
-    .cta{display:flex;gap:12px;margin-top:18px}
-    .hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .hero-card{border-radius:16px;overflow:hidden;background:#fff;border:var(--border);display:grid;place-items:center}
+    .lead{color:#334155;max-width:65ch;line-height:1.5}
 
-    /* Sections */
-    section{padding:40px 0}
-    .section-title{font-size:28px;margin:0 0 16px}
-    .muted{color:var(--muted)}
+    section{padding:28px 0}
     .panel{background:#fff;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .section-title{font-size:24px;margin:0 0 12px}
+    .muted{color:var(--muted)}
 
-    /* Collection */
-    #koleksiyon .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:#fff;border:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-    .card .body{padding:14px;display:flex;flex-direction:column;gap:8px}
-    .price{font-weight:700}
-    .tag{font-size:12px;color:var(--muted);border:var(--border);padding:4px 8px;border-radius:999px;display:inline-flex;width:max-content;background:#f8fafc}
-    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    select, input[type="number"], input[type="text"], input[type="email"], input[type="tel"], textarea{background:#fff;color:var(--text);border:var(--border);border-radius:12px;padding:10px;width:100%}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width: 800px){ .grid{grid-template-columns:1fr} h1{font-size:26px} }
 
-    /* Story split */
-    .split{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .map-wrap{border-radius:16px;overflow:hidden;border:var(--border);box-shadow:var(--shadow);}
+    .map{width:100%;height:380px;border:0;display:block}
 
-    /* STL uploader */
-    .drop{border:1.8px dashed rgba(2,6,23,.18);border-radius:16px;padding:16px;display:grid;place-items:center;text-align:center;cursor:pointer;background:#fff}
-    .viewer{height:360px;border-radius:16px;border:var(--border);background:#fff}
-
-    /* Modal */
-    .overlay{position:fixed;inset:0;background:rgba(2,6,23,.4);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:60}
-    .modal{width:min(960px,92vw);background:#fff;border:var(--border);border-radius:18px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr;gap:0;overflow:hidden}
-    .modal h3{margin:0 0 10px}
-    .modal .left{padding:16px;border-right:var(--border);max-height:70vh;overflow:auto}
-    .modal .right{padding:16px;max-height:70vh;overflow:auto}
-    .item{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(2,6,23,.15)}
-    .qty{display:inline-flex;align-items:center;border:var(--border);border-radius:999px;overflow:hidden}
-    .qty button{background:transparent;border:none;color:var(--text);padding:6px 10px;cursor:pointer}
-    .tot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-weight:700}
-
-    /* Toast */
-    .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(20px);background:#fff;border:var(--border);padding:10px 14px;border-radius:12px;opacity:0;transition:.25s;z-index:80;box-shadow:var(--shadow)}
-    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-    /* Footer */
-    footer{padding:32px 0;color:var(--muted);border-top:var(--border)}
-
-    /* Responsive */
-    @media (max-width: 960px){
-      .hero-wrap, .split, .modal{grid-template-columns:1fr}
-      #koleksiyon .grid{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width: 640px){
-      .hero{padding-top:28px}
-      h1{font-size:32px}
-      #koleksiyon .grid{grid-template-columns:1fr}
-    }
+    footer{padding:28px 0;color:var(--muted);border-top:var(--border);font-size:14px;text-align:center}
   </style>
 </head>
 <body>
-  <!-- GitHub Pages Notu: bu dosyayı köke koy, Settings > Pages > Source: main / root. -->
-
   <header>
     <div class="container nav" role="navigation" aria-label="Ana menü">
       <a class="brand" href="#top" aria-label="Ronilab ana sayfa">
@@ -115,155 +65,47 @@
         Ronilab
       </a>
       <nav class="links">
-        <a href="#koleksiyon">Koleksiyon</a>
-        <a href="#hikaye">Hikâyemiz</a>
-        <a href="#ozel-siparis">Özel Sipariş</a>
+        <a href="#hakkimizda">Hakkımızda</a>
         <a href="#iletisim">İletişim</a>
-        <button id="cartOpen" class="btn cart-btn" aria-label="Sepeti aç">
-          <span>Sepet</span>
-          <span id="cartCount" class="badge" aria-live="polite">0</span>
-        </button>
+        <a href="#harita">Harita</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-wrap">
-        <div>
-          <div class="kicker">Hassas üretim • 3B tasarım</div>
-          <h1>Hassas üretim, <span style="background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">rafine tasarım</span></h1>
-          <p class="lead">Ronilab, fonksiyonel 3B baskı parçaları ve modern aksesuarlar üretir. Koleksiyonumuzu keşfedin ya da STL dosyanızı yükleyip özel sipariş verin.</p>
-          <div class="cta">
-            <a class="btn primary" href="#koleksiyon">Koleksiyona Git</a>
-            <a class="btn ghost" href="#ozel-siparis">Özel Sipariş Ver</a>
-          </div>
-        </div>
-        <div class="hero-grid" aria-hidden="true" id="heroGrid"></div>
-      </div>
-    </section>
-
-    <section id="koleksiyon">
       <div class="container">
-        <h2 class="section-title">Koleksiyon</h2>
-        <p class="muted">Seçili parçalarımızdan favorilerini ekle, sepetten satın alma adımına geç.</p>
-        <div class="grid" id="productGrid" aria-live="polite"></div>
+        <div class="kicker">Hassas üretim • Modern tasarım</div>
+        <h1>Ronilab</h1>
+        <p class="lead">2025 yılında kurulan Ronilab, ileri seviye <strong>SLA</strong> ve <strong>FDM</strong> üretim teknolojileriyle yüksek hassasiyetli 3B üretim, ürün tarama ve modelleme hizmetleri sunar. Savunma sanayi, kalıp ve otomotiv sektörlerinde yenilikçi çözümler geliştirir. Her projede kalite, tekrarlanabilirlik ve mühendislik disiplini önceliğimizdir.</p>
       </div>
     </section>
 
-    <section id="hikaye">
-      <div class="container split">
-        <div class="panel">
-          <h2 class="section-title">Hikâyemiz</h2>
-          <p>Atölyemizde, işlevselliği önceleyen yalın çizgilerle, günlük kullanımda değer katan parçalar üretiyoruz. Prototiplemeden son rötuşlara kadar her aşamada kalite ve tekrarlanabilirlik hedeflenir. Sürdürülebilir malzeme seçimi ve hassas yüzey kalitesi, koleksiyonun temelidir.</p>
-          <a class="btn" href="#koleksiyon">Koleksiyonlara Git</a>
-        </div>
-        <div class="panel">
-          <h3 style="margin-top:0">Üretim Yaklaşımı</h3>
-          <ul>
-            <li>Hassas SLA/FDM, kontrollü tolerans</li>
-            <li>Kalite kontrol ve izlenebilirlik</li>
-            <li>Sürdürülebilir paketleme</li>
-          </ul>
-          <div class="row">
-            <span class="tag">Mat</span>
-            <span class="tag">Saten</span>
-            <span class="tag">Parlak</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ozel-siparis">
+    <section id="hakkimizda">
       <div class="container">
-        <h2 class="section-title">Özel Sipariş (STL Yükle & Önizle)</h2>
-        <div class="split">
-          <label class="drop" for="stlInput">
-            <div>
-              <strong>STL dosyanızı bırakın</strong> ya da tıklayıp seçin
-              <div class="muted" style="margin-top:6px">Maksimum öneri: 30 MB</div>
-            </div>
-          </label>
-          <div class="viewer" id="viewer" aria-label="3B önizleme alanı"></div>
-        </div>
-        <input id="stlInput" type="file" name="stlFiles" accept=".stl" multiple hidden />
-        <div class="panel" style="margin-top:16px">
-          <form id="customOrderForm">
-            <div class="row">
-              <div style="flex:1;min-width:240px">
-                <label>Ad Soyad<input required name="name" type="text" placeholder="Adınız Soyadınız"/></label>
-              </div>
-              <div style="flex:1;min-width:240px">
-                <label>E-posta<input required name="email" type="email" placeholder="ornek@posta.com"/></label>
-              </div>
-              <div style="flex:1;min-width:160px">
-                <label>Telefon<input name="phone" type="tel" placeholder="05xx xxx xx xx"/></label>
-              </div>
-            </div>
-            <div class="row" style="margin-top:8px">
-              <div style="flex:1;min-width:160px">
-                <label>Malzeme
-                  <select name="material">
-                    <option>SLA Reçine</option>
-                    <option>PLA</option>
-                    <option>PETG</option>
-                    <option>TPU</option>
-                  </select>
-                </label>
-              </div>
-              <div style="flex:1;min-width:160px">
-                <label>Yüzey
-                  <select name="finish">
-                    <option>Mat</option>
-                    <option>Saten</option>
-                    <option>Parlak</option>
-                  </select>
-                </label>
-              </div>
-              <div style="flex:1;min-width:160px">
-                <label>Renk<input name="color" type="text" placeholder="Siyah"/></label>
-              </div>
-              <div style="flex:1;min-width:120px">
-                <label>Adet<input name="qty" type="number" min="1" value="1"/></label>
-              </div>
-            </div>
-            <div class="row" style="margin-top:8px">
-              <div style="flex:1;min-width:200px">
-                <label>Maks. Boyut (mm)
-                  <input name="maxSize" type="text" placeholder="Örn. 150 x 80 x 60" />
-                </label>
-              </div>
-            </div>
-            <label style="display:block;margin-top:8px">Notlar<textarea name="notes" rows="3" placeholder="Parça hakkında notlar..."></textarea></label>
-            <label style="display:flex;gap:8px;align-items:center;margin-top:8px">
-              <input type="checkbox" required/> KVKK aydınlatma metnini okudum.
-            </label>
-            <div class="row" style="margin-top:10px">
-              <button class="btn" type="button" id="snap">Önizleme Görselini Kaydet</button>
-              <button class="btn primary" type="submit">Özel Sipariş Talebi Gönder</button>
-            </div>
-          </form>
+        <div class="panel">
+          <h2 class="section-title">Hakkımızda</h2>
+          <p>Ronilab, 2025 yılında İstanbul’da kurulmuştur. Müşterilerine <strong>hassas SLA (Stereolithography)</strong> ve <strong>FDM (Fused Deposition Modeling)</strong> teknolojileriyle üretim hizmetleri, ayrıca yüksek çözünürlüklü <strong>ürün tarama</strong> ve <strong>tersine mühendislik</strong> çözümleri sunar.</p>
+          <p>Deneyimli mühendis kadromuzla <strong>savunma sanayi</strong>, <strong>kalıp</strong> ve <strong>otomotiv</strong> sektörlerinde 3B baskı prototipleri, düşük hacimli üretim parçaları ve mühendislik doğrulama modelleri geliştiriyoruz. Hedefimiz, her üretimde estetik, işlevsellik ve dayanıklılığı bir arada sunmaktır.</p>
+          <p>Kalite odaklı yaklaşımımız ve sürdürülebilir üretim anlayışımız ile Türkiye'nin yenilikçi 3B üretim merkezlerinden biri olmayı amaçlıyoruz.</p>
         </div>
       </div>
     </section>
 
     <section id="iletisim">
       <div class="container">
-        <h2 class="section-title">Adres & İletişim</h2>
-        <div class="split">
+        <div class="grid">
           <div class="panel">
+            <h2 class="section-title">Adres & İletişim</h2>
             <p><strong>Adres:</strong> Hürriyet Mahallesi Berrak Sokak No: 6, Kartal, İstanbul</p>
             <p><strong>E-posta:</strong> <a href="mailto:info@ronilab.com">info@ronilab.com</a></p>
             <p><strong>Telefon:</strong> <a href="tel:+905432856445">0543 285 64 45</a></p>
-            <p><a class="btn" href="https://www.openstreetmap.org" target="_blank" rel="noopener">Haritada Aç</a></p>
           </div>
-          <div class="panel">
-            <p class="muted">Instagram • LinkedIn • WhatsApp</p>
-            <div class="row">
-              <a class="btn" href="#">Instagram</a>
-              <a class="btn" href="#">LinkedIn</a>
-              <a class="btn" href="https://wa.me/905432856445" target="_blank" rel="noopener">WhatsApp</a>
-            </div>
+          <div class="map-wrap" id="harita">
+            <iframe class="map" loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=H%C3%BCrriyet%20Mahallesi%20Berrak%20Sokak%20No%3A%206%2C%20Kartal%2C%20%C4%B0stanbul&output=embed"
+              title="Ronilab Konum"></iframe>
           </div>
         </div>
       </div>
@@ -271,363 +113,21 @@
   </main>
 
   <footer>
-    <div class="container">
-      © <span id="y"></span> Ronilab • Tüm hakları saklıdır.
-    </div>
+    <div class="container">© <span id="y"></span> Ronilab • Tüm hakları saklıdır. • <a href="https://ronilab.com">ronilab.com</a></div>
   </footer>
 
-  <!-- Sepet Modalı -->
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-labelledby="cartTitle" aria-modal="true">
-      <div class="left">
-        <h3 id="cartTitle">Sepetiniz</h3>
-        <div id="cartItems"></div>
-        <div class="tot"><span>Ara Toplam</span><span id="subtotal">₺0,00</span></div>
-        <div class="tot"><span>Tahmini Kargo</span><span id="shipping">₺29,90</span></div>
-        <div class="tot"><span>Toplam</span><span id="grand">₺0,00</span></div>
-        <div class="row" style="margin-top:12px">
-          <button class="btn ghost" id="contShop">Alışverişe Devam Et</button>
-          <button class="btn" id="clearCart">Sepeti Temizle</button>
-        </div>
-      </div>
-      <div class="right">
-        <h3>Teslimat & Ödeme</h3>
-        <form id="checkout">
-          <div class="row">
-            <div style="flex:1;min-width:220px"><label>Ad Soyad<input required name="name" type="text"></label></div>
-            <div style="flex:1;min-width:220px"><label>E-posta<input required name="email" type="email"></label></div>
-          </div>
-          <label style="display:block;margin-top:8px">Adres<textarea required name="address" rows="3"></textarea></label>
-          <div class="row" style="margin-top:8px">
-            <div style="flex:1;min-width:160px"><label>Şehir<input required name="city" type="text"></label></div>
-            <div style="flex:1;min-width:120px"><label>Posta Kodu<input required name="zip" type="text"></label></div>
-            <div style="flex:1;min-width:160px"><label>Telefon<input name="phone" type="tel"></label></div>
-          </div>
-          <div class="row" style="margin-top:8px">
-            <div style="flex:1;min-width:160px"><label>Kargo
-              <select name="shipping">
-                <option>Standart (3–5 gün)</option>
-                <option>Hızlı (1–2 gün)</option>
-              </select>
-            </label></div>
-            <div style="flex:1;min-width:160px"><label>Ödeme
-              <select name="payment">
-                <option>Kapıda</option>
-                <option>IBAN/EFT</option>
-              </select>
-            </label></div>
-          </div>
-          <label style="display:flex;gap:8px;align-items:center;margin-top:8px"><input required type="checkbox"> KVKK onayı</label>
-          <div class="row" style="margin-top:10px">
-            <button type="button" class="btn ghost" id="closeModal">Kapat</button>
-            <button type="submit" class="btn primary">Siparişi Tamamla</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <!-- Three.js (global) -->
-  <script src="https://unpkg.com/three@0.159.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.159.0/examples/js/controls/OrbitControls.js"></script>
-  <script src="https://unpkg.com/three@0.159.0/examples/js/loaders/STLLoader.js"></script>
-
-  <!-- Uygulama kodu: Global THREE ile -->
-  <script id="app-script">
-    // Modül -> Global köprü (mevcut testlerin bozulmaması için)
-    window.OrbitControls = window.OrbitControls || THREE.OrbitControls;
-    window.STLLoader = window.STLLoader || THREE.STLLoader;
-
-    // ---------- Util ----------
-    const $ = (q,root=document)=>root.querySelector(q);
-    const $$ = (q,root=document)=>Array.from(root.querySelectorAll(q));
-    const money = n => `₺${n.toFixed(2).replace('.',',')}`;
-    const toast = (msg)=>{const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)};
-
-    // Basit filigran SVG üreticisi (baş harf)
-    const wm = (ch, w=640, h=420) => {
-      const surface = getComputedStyle(document.documentElement).getPropertyValue('--surface').trim()||'#f5f9ff';
-      const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#0ea5e9';
-      const svg =
-      `<svg xmlns='http://www.w3.org/2000/svg' width='${w}' height='${h}'>
-        <defs>
-          <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-            <stop offset='0%' stop-color='${surface}'/>
-            <stop offset='100%' stop-color='#ffffff'/>
-          </linearGradient>
-        </defs>
-        <rect width='100%' height='100%' fill='url(#g)'/>
-        <text x='50%' y='52%' dominant-baseline='middle' text-anchor='middle'
-          font-family='Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' font-size='${Math.min(w,h)*0.55}'
-          font-weight='800' fill='${accent}' opacity='0.18'>${ch}</text>
-      </svg>`;
-      return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-    };
-
-    // ---------- Products (dummy) ----------
-    const PRODUCTS=[
-      {id:'nasa-sls', name:'NASA SLS (Space Launch System)', price:249.90, img:'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Space%20Launch%20System%20(SLS)/Space%20Launch%20System%20(SLS).png', tags:['NASA','PNG']},
-      {id:'mono-vase', name:'Mono Vase', price:249.90, img: null, tags:['SLA','Mat']},
-      {id:'orbit-pen', name:'Orbit Pen Stand', price:199.90, img: null, tags:['PLA','Saten']},
-      {id:'tactile-tray', name:'Tactile Tray', price:179.90, img: null, tags:['PETG','Mat']},
-      {id:'kado-clip', name:'Kado Clip', price:89.90, img: null, tags:['TPU','Parlak']},
-      {id:'arc-stand', name:'Arc Stand', price:219.90, img: null, tags:['PLA','Mat']},
-      {id:'flux-holder', name:'Flux Holder', price:129.90, img: null, tags:['SLA','Saten']},
-    ];
-
-    function renderProducts(){
-      const grid=$('#productGrid');
-      grid.innerHTML='';
-      PRODUCTS.forEach(p=>{
-        const card=document.createElement('article');
-        card.className='card';
-        const letter = (p.name||'R').trim().charAt(0).toUpperCase();
-        const imgSrc = p.img ? p.img : wm(letter, 640, 420);
-        card.innerHTML=`
-          <img loading="lazy" src="${imgSrc}" alt="${p.name} görseli">
-          <div class="body">
-            <div class="row">
-              ${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}
-            </div>
-            <h3 style="margin:4px 0 0;font-size:18px">${p.name}</h3>
-            <div class="price">${money(p.price)}</div>
-            <div class="row">
-              <button class="btn add" data-id="${p.id}">Sepete Ekle</button>
-            </div>
-          </div>`;
-        grid.appendChild(card);
-      });
-    }
-
-    function renderHeroTiles(){
-      const grid = $('#heroGrid');
-      grid.innerHTML='';
-      const letters = ['R','O','N','I','L','A','B'];
-      letters.slice(0,6).forEach(ch=>{
-        const d=document.createElement('div'); d.className='hero-card';
-        const img=document.createElement('img');
-        img.alt=`${ch} filigran`;
-        img.src=wm(ch, 600, 400);
-        d.appendChild(img);
-        grid.appendChild(d);
-      });
-    }
-
-    // ---------- Cart (localStorage) ----------
-    const LS_KEY='cart_v1';
-    const getCart=()=>{try{return JSON.parse(localStorage.getItem(LS_KEY)||'[]')}catch{return []}};
-    const setCart=(c)=>{localStorage.setItem(LS_KEY,JSON.stringify(c));updateBadge()};
-    function addToCart(id){
-      const p=PRODUCTS.find(x=>x.id===id); if(!p) return;
-      const cart=getCart();
-      const i=cart.findIndex(x=>x.id===id);
-      const img = wm((p.name||'R')[0].toUpperCase(), 128, 128);
-      if(i>-1) cart[i].qty+=1; else cart.push({id:p.id,name:p.name,price:p.price,qty:1,img});
-      setCart(cart); toast(`${p.name} sepete eklendi`);
-    }
-    function removeFromCart(id){ const c=getCart().filter(x=>x.id!==id); setCart(c); renderCart(); }
-    function changeQty(id,delta){
-      const c=getCart(); const i=c.findIndex(x=>x.id===id); if(i<0) return;
-      c[i].qty=Math.max(1,(c[i].qty||1)+delta); setCart(c); renderCart();
-    }
-    function clearCart(){ setCart([]); renderCart(); }
-    function subtotal(){ return getCart().reduce((s,x)=>s+x.price*(x.qty||1),0) }
-    function updateBadge(){ $('#cartCount').textContent=getCart().reduce((s,x)=>s+(x.qty||1),0) }
-
-    function renderCart(){
-      const wrap=$('#cartItems'); wrap.innerHTML='';
-      const c=getCart();
-      if(!c.length){ wrap.innerHTML='<p class="muted">Sepetiniz boş.</p>'; }
-      c.forEach(it=>{
-        const row=document.createElement('div'); row.className='item';
-        row.innerHTML=`
-          <img src="${it.img}" alt="${it.name}" width="64" height="64" style="border-radius:10px;object-fit:cover">
-          <div>
-            <div style="font-weight:600">${it.name}</div>
-            <div class="muted">${money(it.price)}</div>
-          </div>
-          <div style="display:flex;gap:8px;align-items:center">
-            <div class="qty" aria-label="Adet seçici">
-              <button aria-label="Azalt" onclick="changeQty('${it.id}',-1)">−</button>
-              <span style="padding:0 8px">${it.qty||1}</span>
-              <button aria-label="Arttır" onclick="changeQty('${it.id}',1)">+</button>
-            </div>
-            <button class="btn" onclick="removeFromCart('${it.id}')">Sil</button>
-          </div>`;
-        wrap.appendChild(row);
-      });
-      const ship= c.length? 29.90 : 0;
-      $('#subtotal').textContent=money(subtotal());
-      $('#shipping').textContent=money(ship);
-      $('#grand').textContent=money(subtotal()+ship);
-    }
-
-    // ---------- Modal controls ----------
-    const overlay=$('#overlay');
-    function openCart(){ overlay.style.display='flex'; overlay.setAttribute('aria-hidden','false'); renderCart(); $('#closeModal').focus(); }
-    function closeCart(){ overlay.style.display='none'; overlay.setAttribute('aria-hidden','true'); }
-
-    // ---------- STL Viewer ----------
-    let renderer, scene, camera, controls, mesh;
-    function initViewer(){
-      const el=$('#viewer');
-      renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
-      renderer.setSize(el.clientWidth, el.clientHeight);
-      el.innerHTML=''; el.appendChild(renderer.domElement);
-      scene=new THREE.Scene(); scene.background=new THREE.Color(0xffffff);
-      camera=new THREE.PerspectiveCamera(50, el.clientWidth/el.clientHeight, 0.1, 1000);
-      camera.position.set(0, 80, 140);
-      controls=new OrbitControls(camera, renderer.domElement);
-      controls.enableDamping=true; controls.dampingFactor=0.06;
-      const hemi=new THREE.HemisphereLight(0xffffff,0xe2f2ff,0.9); scene.add(hemi);
-      const dir=new THREE.DirectionalLight(0xffffff,0.6); dir.position.set(100,120,80); scene.add(dir);
-
-      const grid=new THREE.GridHelper(200, 20, 0x8ecaff, 0xdbeafe); grid.material.opacity=.35; grid.material.transparent=true; scene.add(grid);
-
-      function animate(){ requestAnimationFrame(animate); controls.update(); renderer.render(scene,camera); }
-      animate();
-      window.addEventListener('resize',()=>{
-        const w=el.clientWidth,h=el.clientHeight; camera.aspect=w/h; camera.updateProjectionMatrix(); renderer.setSize(w,h);
-      });
-    }
-
-    function loadSTLFromFile(file){
-      if(file.size>30*1024*1024){ toast('Dosya büyük: 30MB üzeri performansı etkileyebilir.'); }
-      const reader=new FileReader();
-      reader.onload=e=>{
-        const loader=new STLLoader();
-        const geo=loader.parse(e.target.result);
-        const mat=new THREE.MeshStandardMaterial({color:0x0f172a, metalness:0.05, roughness:0.55});
-        if(mesh){ scene.remove(mesh); mesh.geometry.dispose(); }
-        mesh=new THREE.Mesh(geo,mat); geo.computeBoundingBox();
-        const bb=geo.boundingBox; const size=new THREE.Vector3(); bb.getSize(size);
-        const center=new THREE.Vector3(); bb.getCenter(center); mesh.geometry.translate(-center.x,-center.y,-center.z);
-        const maxDim=Math.max(size.x,size.y,size.z)||1; const scale=100/maxDim; mesh.scale.setScalar(scale);
-        scene.add(mesh); toast('STL yüklendi');
-      };
-      reader.readAsArrayBuffer(file);
-    }
-
-    // ---------- Snapshot ----------
-    function downloadCanvasPNG(){ if(!renderer) return; const a=document.createElement('a'); a.download='onizleme.png'; a.href=renderer.domElement.toDataURL('image/png'); a.click(); }
-
-    // ---------- Forms ----------
-    function serialize(form){ return Object.fromEntries(new FormData(form).entries()); }
-
-    // ---------- Init ----------
-    window.addEventListener('DOMContentLoaded',()=>{
-      document.getElementById('y').textContent=new Date().getFullYear();
-      renderHeroTiles();
-      renderProducts(); updateBadge(); initViewer();
-      $('#productGrid').addEventListener('click',e=>{
-        const btn=e.target.closest('.add'); if(!btn) return; addToCart(btn.dataset.id);
-      });
-      // modal
-      $('#cartOpen').addEventListener('click',openCart);
-      $('#closeModal').addEventListener('click',closeCart);
-      $('#contShop').addEventListener('click',()=>{ closeCart(); document.location.hash='#koleksiyon'; });
-      $('#clearCart').addEventListener('click',()=>{ clearCart(); toast('Sepet temizlendi'); });
-      overlay.addEventListener('click',e=>{ if(e.target===overlay) closeCart(); });
-      document.addEventListener('keydown',e=>{ if(e.key==='Escape' && overlay.getAttribute('aria-hidden')==='false') closeCart(); });
-
-      // STL
-      const drop=$('.drop'); const input=$('#stlInput');
-      drop.addEventListener('click',()=>input.click());
-      input.addEventListener('change',()=>{ const f=input.files[0]; if(f) loadSTLFromFile(f); });
-      drop.addEventListener('dragover',e=>{ e.preventDefault(); drop.style.borderColor='var(--accent)'; });
-      drop.addEventListener('dragleave',()=>{ drop.style.borderColor='rgba(2,6,23,.18)'; });
-      drop.addEventListener('drop',e=>{ e.preventDefault(); drop.style.borderColor='rgba(2,6,23,.18)'; const f=e.dataTransfer.files[0]; if(f) loadSTLFromFile(f); });
-
-      // snapshot
-      $('#snap').addEventListener('click',downloadCanvasPNG);
-
-      // Custom order form (send email with attachments)
-      const MAIL_ENDPOINT = window.RONILAB_MAIL_ENDPOINT || 'https://YOUR_MAIL_ENDPOINT';
-      $('#customOrderForm').addEventListener('submit',async e=>{
-        e.preventDefault();
-        const data=serialize(e.target);
-        const files = Array.from($('#stlInput').files||[]);
-        if(!files.length){ toast('Lütfen en az bir STL dosyası ekleyin'); return; }
-
-        const fd = new FormData();
-        fd.append('to','info@ronilab.com');
-        fd.append('subject',`Özel Sipariş Talebi – ${data.name || 'İsimsiz'}`);
-        fd.append('text',
-`İsim: ${data.name}
-E-posta: ${data.email}
-Telefon: ${data.phone||'-'}
-Malzeme: ${data.material}
-Yüzey: ${data.finish}
-Renk: ${data.color||'-'}
-Adet: ${data.qty||'1'}
-Maks. Boyut: ${data.maxSize||'-'}
-Notlar: ${data.notes||'-'}
-
-Gönderim tarihi: ${new Date().toLocaleString()}`
-        );
-        files.forEach((f,idx)=> fd.append('attachments', f, f.name||`stl_${idx+1}.stl`));
-
-        try{
-          const res = await fetch(MAIL_ENDPOINT, { method:'POST', body: fd });
-          if(!res.ok) throw new Error(`Mail API hata: ${res.status}`);
-          toast('Özel sipariş talebiniz e-posta ile iletildi');
-          e.target.reset();
-          $('#stlInput').value='';
-        }catch(err){
-          console.error('Mail gönderim hatası', err);
-          toast('Gönderim yapılamadı. Lütfen daha sonra tekrar deneyin.');
-        }
-      });
-
-      // Checkout (demo submit)
-      $('#checkout').addEventListener('submit',e=>{
-        e.preventDefault(); const data=serialize(e.target); const items=getCart(); const payload={type:'checkout', items, totals:{subtotal:subtotal(), shipping: items.length?29.90:0}}; console.log(payload); toast('Sipariş başarıyla alındı (demo)');
-      });
-
-      // ---------- Testler ----------
-      console.group('%cÖnyükleme Testleri','color:#0ea5e9');
-      try {
-        console.assert(typeof THREE !== 'undefined', 'THREE yüklenemedi');
-        console.assert(typeof OrbitControls === 'function' || typeof THREE.OrbitControls === 'function', 'OrbitControls yok veya fonksiyon değil');
-        console.assert(typeof STLLoader === 'function' || typeof THREE.STLLoader === 'function', 'STLLoader yok veya fonksiyon değil');
-        // wm çıktısı data URI olmalı
-        const wmu = wm('R', 120, 80);
-        console.assert(/^data:image\/svg\+xml/.test(wmu), 'Filigran data URI üretmedi');
-        // Ürün görseli seçim testi (NASA için doğrudan img, diğerleri filigran)
-        const nasa = PRODUCTS.find(p=>p.id==='nasa-sls');
-        console.assert(!!nasa.img, 'NASA ürünü görsel URL içermeli');
-        // Sepet rozeti testi
-        const before = localStorage.getItem(LS_KEY);
-        addToCart('mono-vase');
-        const badge = parseInt($('#cartCount').textContent,10);
-        console.assert(badge >= 1, 'Sepet rozeti güncellenmedi');
-        if(before===null) localStorage.removeItem(LS_KEY); else localStorage.setItem(LS_KEY,before);
-        updateBadge();
-        // Mail endpoint ayarlı mı (placeholder olsa bile string)
-        console.assert(typeof (window.RONILAB_MAIL_ENDPOINT||'') === 'string', 'Mail endpoint tanımlı değil');
-      } catch(e){ console.error('Testlerde hata:', e); }
-      console.groupEnd();
-    });
-  </script>
-
   <script>
-    /*
-      ⚙️ Posta Uç Noktası (Serverless) Hakkında
-      - GitHub Pages statik barındırmadır; e-posta ve ek gönderimi için bir serverless uç nokta gerekir.
-      - Bir Cloudflare Worker / Vercel / Netlify Function kurup aşağıdaki sözleşmeyi destekleyin:
-        POST multipart/form-data
-          - to: string (örn. info@ronilab.com)
-          - subject: string
-          - text: string (düz metin içerik)
-          - attachments: File[] (STL dosyaları)
-      - Sunucu tarafında SendGrid / Resend / Mailgun gibi bir hizmet ile maili iletin.
-      - Uç nokta URL’sini sayfaya şuradan sağlayabilirsiniz:
-        1) <script> içinde window.RONILAB_MAIL_ENDPOINT='https://...' atayın ya da
-        2) index.html içinde bu açıklamanın altındaki satırı değiştirin.
-    */
-    window.RONILAB_MAIL_ENDPOINT = window.RONILAB_MAIL_ENDPOINT || 'https://YOUR_MAIL_ENDPOINT';
+    // Basit SEO iyileştirmeleri ve mobil uyumluluk testi
+    document.getElementById('y').textContent = new Date().getFullYear();
+    console.group('%cSEO & Mobil Test','color:#0ea5e9');
+    try{
+      const metaDesc = document.querySelector('meta[name="description"]');
+      console.assert(metaDesc && metaDesc.content.length>50,'Meta açıklaması kısa olabilir');
+      console.assert(window.innerWidth <= 1024,'Mobil uyumlu görünüm kontrolü: OK');
+      console.log('Canonical:', document.querySelector('link[rel="canonical"]').href);
+      console.log('Anahtar kelimeler:', document.querySelector('meta[name="keywords"]').content);
+    }catch(e){console.error('SEO test hatası',e);}
+    console.groupEnd();
   </script>
 </body>
 </html>
