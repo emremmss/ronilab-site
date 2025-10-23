@@ -10,7 +10,7 @@
   <meta property="og:description" content="Ronilab 2025 yılında kurulmuş olup hassas SLA ve FDM üretim, ürün tarama hizmetleriyle savunma, kalıp ve otomotiv sektörlerine hizmet verir." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
-  <link rel="canonical" href="https://ronilab.com/" />
+  <link rel="canonical" href="https://www.ronilab.com/" />
   <style>
     :root{
       --bg:#ffffff;
@@ -64,6 +64,29 @@
   gtag('js', new Date());
   gtag('config', 'G-03MKEF4E3X'); // G- ile başlayan GA4 ölçüm kimliğini buraya gir
 </script>
+  <!-- Structured Data / Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ronilab",
+    "url": "https://www.ronilab.com",
+    "logo": "https://www.ronilab.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hürriyet Mahallesi Berrak Sokak No:6",
+      "addressLocality": "Kartal",
+      "addressRegion": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+905432856445",
+      "email": "info@ronilab.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -135,53 +158,14 @@
       console.log('Canonical:', document.querySelector('link[rel="canonical"]').href);
       console.log('Anahtar kelimeler:', document.querySelector('meta[name="keywords"]').content);
     }catch(e){console.error('SEO test hatası',e);}
+      // GA & JSON-LD testleri
+    try{
+      console.assert(typeof gtag === 'function', 'GA4 gtag yüklenmedi');
+      const ld = document.querySelector('script[type="application/ld+json"]');
+      const org = JSON.parse(ld?.textContent||'{}');
+      console.assert(org.name === 'Ronilab', 'JSON-LD Organization adı beklenen değil');
+    }catch(e){ console.warn('GA/JSON-LD testleri atlandı:', e); }
     console.groupEnd();
   </script>
 </body>
 </html>
-
-<!-- robots.txt -->
-<!-- Bu dosyayı repo kök dizinine 'robots.txt' adıyla ekle -->
-<!--
-User-agent: *
-Allow: /
-Sitemap: https://www.ronilab.com/sitemap.xml
--->
-
-<!-- sitemap.xml -->
-<!-- Bu dosyayı repo kök dizinine 'sitemap.xml' adıyla ekle -->
-<!--
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.ronilab.com/</loc>
-    <priority>1.0</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-</urlset>
--->
-
-<!-- structured data / schema.org -->
-<!-- Aşağıdaki script'i <head> etiketinin sonuna veya body sonunda ekleyebilirsin -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Ronilab",
-  "url": "https://www.ronilab.com",
-  "logo": "https://www.ronilab.com/logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Hürriyet Mahallesi Berrak Sokak No:6",
-    "addressLocality": "Kartal",
-    "addressRegion": "İstanbul",
-    "addressCountry": "TR"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+905432856445",
-    "email": "info@ronilab.com",
-    "contactType": "customer support"
-  }
-}
-</script>
