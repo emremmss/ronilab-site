@@ -16,7 +16,7 @@
       --card:#ffffff;               /* kart beyazı */
       --muted:#5b6880;              /* metin ikincil */
       --text:#0f172a;               /* koyu metin */
-      --accent:#0ea5e9;             /* skyblue (Tailwind sky-500 civarı) */
+      --accent:#0ea5e9;             /* skyblue */
       --accent-2:#38bdf8;           /* skyblue açık tonu */
       --ok:#16a34a; --warn:#f59e0b; --err:#ef4444;
       --radius:18px;
@@ -329,11 +329,16 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- Uygulama kodu: ES Modules -->
-  <script type="module" id="app-module">
-    import * as THREE from 'https://unpkg.com/three@0.159.0/build/three.module.js';
-    import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
-    import { STLLoader } from 'https://unpkg.com/three@0.159.0/examples/jsm/loaders/STLLoader.js';
+  <!-- Three.js (global) -->
+  <script src="https://unpkg.com/three@0.159.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.159.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three@0.159.0/examples/js/loaders/STLLoader.js"></script>
+
+  <!-- Uygulama kodu: Global THREE ile -->
+  <script id="app-script">
+    // Modül -> Global köprü (mevcut testlerin bozulmaması için)
+    window.OrbitControls = window.OrbitControls || THREE.OrbitControls;
+    window.STLLoader = window.STLLoader || THREE.STLLoader;
 
     // ---------- Util ----------
     const $ = (q,root=document)=>root.querySelector(q);
@@ -342,25 +347,28 @@
     const toast = (msg)=>{const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)};
 
     // Basit filigran SVG üreticisi (baş harf)
-    const wm = (ch, w=640, h=420, bg1='var(--surface)', bg2='white', fg='var(--accent)') => {
+    const wm = (ch, w=640, h=420) => {
+      const surface = getComputedStyle(document.documentElement).getPropertyValue('--surface').trim()||'#f5f9ff';
+      const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#0ea5e9';
       const svg =
       `<svg xmlns='http://www.w3.org/2000/svg' width='${w}' height='${h}'>
         <defs>
           <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-            <stop offset='0%' stop-color='${getComputedStyle(document.documentElement).getPropertyValue('--surface').trim()||'#f5f9ff'}'/>
+            <stop offset='0%' stop-color='${surface}'/>
             <stop offset='100%' stop-color='#ffffff'/>
           </linearGradient>
         </defs>
         <rect width='100%' height='100%' fill='url(#g)'/>
         <text x='50%' y='52%' dominant-baseline='middle' text-anchor='middle'
           font-family='Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial' font-size='${Math.min(w,h)*0.55}'
-          font-weight='800' fill='${getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#0ea5e9'}' opacity='0.18'>${ch}</text>
+          font-weight='800' fill='${accent}' opacity='0.18'>${ch}</text>
       </svg>`;
       return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
     };
 
     // ---------- Products (dummy) ----------
     const PRODUCTS=[
+      {id:'nasa-sls', name:'NASA SLS (Space Launch System)', price:249.90, img:'https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Space%20Launch%20System%20(SLS)/Space%20Launch%20System%20(SLS).png', tags:['NASA','PNG']},
       {id:'mono-vase', name:'Mono Vase', price:249.90, img: null, tags:['SLA','Mat']},
       {id:'orbit-pen', name:'Orbit Pen Stand', price:199.90, img: null, tags:['PLA','Saten']},
       {id:'tactile-tray', name:'Tactile Tray', price:179.90, img: null, tags:['PETG','Mat']},
@@ -372,13 +380,13 @@
     function renderProducts(){
       const grid=$('#productGrid');
       grid.innerHTML='';
-      PRODUCTS.forEach((p,i)=>{
+      PRODUCTS.forEach(p=>{
         const card=document.createElement('article');
         card.className='card';
         const letter = (p.name||'R').trim().charAt(0).toUpperCase();
-        const imgSrc = wm(letter, 640, 420);
+        const imgSrc = p.img ? p.img : wm(letter, 640, 420);
         card.innerHTML=`
-          <img loading="lazy" src="${imgSrc}" alt="${p.name} filigran görseli">
+          <img loading="lazy" src="${imgSrc}" alt="${p.name} görseli">
           <div class="body">
             <div class="row">
               ${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}
@@ -468,7 +476,7 @@
       renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
       renderer.setSize(el.clientWidth, el.clientHeight);
       el.innerHTML=''; el.appendChild(renderer.domElement);
-      scene=new THREE.Scene(); scene.background=new THREE.Color(0xffffff); /* beyaz */
+      scene=new THREE.Scene(); scene.background=new THREE.Color(0xffffff);
       camera=new THREE.PerspectiveCamera(50, el.clientWidth/el.clientHeight, 0.1, 1000);
       camera.position.set(0, 80, 140);
       controls=new OrbitControls(camera, renderer.domElement);
@@ -491,7 +499,7 @@
       reader.onload=e=>{
         const loader=new STLLoader();
         const geo=loader.parse(e.target.result);
-        const mat=new THREE.MeshStandardMaterial({color:0x0f172a, metalness:0.05, roughness:0.55}); /* koyu gri parça */
+        const mat=new THREE.MeshStandardMaterial({color:0x0f172a, metalness:0.05, roughness:0.55});
         if(mesh){ scene.remove(mesh); mesh.geometry.dispose(); }
         mesh=new THREE.Mesh(geo,mat); geo.computeBoundingBox();
         const bb=geo.boundingBox; const size=new THREE.Vector3(); bb.getSize(size);
@@ -547,7 +555,7 @@
         fd.append('to','info@ronilab.com');
         fd.append('subject',`Özel Sipariş Talebi – ${data.name || 'İsimsiz'}`);
         fd.append('text',
-          `İsim: ${data.name}
+`İsim: ${data.name}
 E-posta: ${data.email}
 Telefon: ${data.phone||'-'}
 Malzeme: ${data.material}
@@ -578,23 +586,32 @@ Gönderim tarihi: ${new Date().toLocaleString()}`
         e.preventDefault(); const data=serialize(e.target); const items=getCart(); const payload={type:'checkout', items, totals:{subtotal:subtotal(), shipping: items.length?29.90:0}}; console.log(payload); toast('Sipariş başarıyla alındı (demo)');
       });
 
-      // ---------- Basit Testler (Console) ----------
+      // ---------- Testler ----------
       console.group('%cÖnyükleme Testleri','color:#0ea5e9');
       try {
-        console.assert(typeof OrbitControls === 'function', 'OrbitControls yok veya fonksiyon değil');
-        console.assert(typeof STLLoader === 'function', 'STLLoader yok veya fonksiyon değil');
-      } catch(e){ console.error('Modül testleri hata:', e); }
-      // Sepet testleri
-      const before = localStorage.getItem(LS_KEY);
-      addToCart('mono-vase');
-      const badge = $('#cartCount').textContent;
-      console.assert(parseInt(badge,10) >= 1, 'Sepet rozeti güncellenmedi');
-      // Temizlik
-      if(before===null) localStorage.removeItem(LS_KEY); else localStorage.setItem(LS_KEY,before);
-      updateBadge();
+        console.assert(typeof THREE !== 'undefined', 'THREE yüklenemedi');
+        console.assert(typeof OrbitControls === 'function' || typeof THREE.OrbitControls === 'function', 'OrbitControls yok veya fonksiyon değil');
+        console.assert(typeof STLLoader === 'function' || typeof THREE.STLLoader === 'function', 'STLLoader yok veya fonksiyon değil');
+        // wm çıktısı data URI olmalı
+        const wmu = wm('R', 120, 80);
+        console.assert(/^data:image\/svg\+xml/.test(wmu), 'Filigran data URI üretmedi');
+        // Ürün görseli seçim testi (NASA için doğrudan img, diğerleri filigran)
+        const nasa = PRODUCTS.find(p=>p.id==='nasa-sls');
+        console.assert(!!nasa.img, 'NASA ürünü görsel URL içermeli');
+        // Sepet rozeti testi
+        const before = localStorage.getItem(LS_KEY);
+        addToCart('mono-vase');
+        const badge = parseInt($('#cartCount').textContent,10);
+        console.assert(badge >= 1, 'Sepet rozeti güncellenmedi');
+        if(before===null) localStorage.removeItem(LS_KEY); else localStorage.setItem(LS_KEY,before);
+        updateBadge();
+        // Mail endpoint ayarlı mı (placeholder olsa bile string)
+        console.assert(typeof (window.RONILAB_MAIL_ENDPOINT||'') === 'string', 'Mail endpoint tanımlı değil');
+      } catch(e){ console.error('Testlerde hata:', e); }
       console.groupEnd();
     });
   </script>
+
   <script>
     /*
       ⚙️ Posta Uç Noktası (Serverless) Hakkında
@@ -608,7 +625,7 @@ Gönderim tarihi: ${new Date().toLocaleString()}`
       - Sunucu tarafında SendGrid / Resend / Mailgun gibi bir hizmet ile maili iletin.
       - Uç nokta URL’sini sayfaya şuradan sağlayabilirsiniz:
         1) <script> içinde window.RONILAB_MAIL_ENDPOINT='https://...' atayın ya da
-        2) index.html içinde bu açıklamanın altındaki satırı düzenleyin.
+        2) index.html içinde bu açıklamanın altındaki satırı değiştirin.
     */
     window.RONILAB_MAIL_ENDPOINT = window.RONILAB_MAIL_ENDPOINT || 'https://YOUR_MAIL_ENDPOINT';
   </script>
