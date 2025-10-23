@@ -1,0 +1,22 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ronilab",
+  "url": "https://www.ronilab.com",
+  "logo": "https://www.ronilab.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Hürriyet Mahallesi Berrak Sokak No:6",
+    "addressLocality": "Kartal",
+    "addressRegion": "İstanbul",
+    "addressCountry": "TR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+905432856445",
+    "email": "info@ronilab.com",
+    "contactType": "customer support"
+  }
+}
+</script>
