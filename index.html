@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ronilab – Hakkımızda & İletişim</title>
-  <meta name="description" content="Ronilab 2025 yılında kurulmuş, hassas SLA ve FDM üretim, ürün tarama hizmetleriyle savunma, kalıp ve otomotiv sektörlerine çözümler sunar." />
-  <meta name="keywords" content="Ronilab, 3B baskı, SLA, FDM, ürün tarama, 3D scanning, savunma sanayi, otomotiv, kalıp, üretim, 3D printing, İstanbul" />
-  <meta property="og:title" content="Ronilab – 3B Baskı & Tarama Hizmetleri" />
-  <meta property="og:description" content="Ronilab 2025 yılında kurulmuş olup hassas SLA ve FDM üretim, ürün tarama hizmetleriyle savunma, kalıp ve otomotiv sektörlerine hizmet verir." />
+  <title>Ronilab – 3B Baskı, SLA & Ürün Tarama Hizmetleri | İstanbul</title>
+  <meta name="description" content="Ronilab, İstanbul’da SLA ve FDM ile 3B baskı, ürün tarama (3D scanning) ve tersine mühendislik sunar. Savunma, kalıp ve otomotiv için hızlı prototipleme ve hassas üretim." />
+  <meta name="keywords" content="3B baskı, 3D printing, SLA baskı, FDM baskı, hızlı prototipleme, 3D scanning, ürün tarama, tersine mühendislik, endüstriyel tasarım, 3D modelleme, İstanbul 3B baskı, savunma sanayi baskı, otomotiv prototip, kalıp doğrulama, Ronilab, 3B baskı merkezi" />
+  <meta property="og:title" content="Ronilab – 3B Baskı, SLA & Ürün Tarama Hizmetleri | İstanbul" />
+  <meta property="og:description" content="SLA/FDM 3B baskı, ürün tarama ve tersine mühendislik hizmetleri. Savunma, kalıp ve otomotiv sektörleri için hassas üretim çözümleri." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="tr_TR" />
   <link rel="canonical" href="https://www.ronilab.com/" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
   <!-- Performance hint for GA -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -45,7 +47,7 @@
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);}
+    body{font-family:'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;color:var(--text);background:var(--bg);}
     a{color:var(--text);text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
@@ -54,7 +56,10 @@
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
     .brand .logo{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);display:grid;place-items:center;color:#fff;font-weight:800}
     .brand .logo::after{content:'R';}
-    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .links a{position:relative}
+    .links a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform .25s}
+    .links a:hover::after{transform:scaleX(1)}
 
     .hero{padding:40px 0;background:linear-gradient(180deg,var(--surface),#fff 70%)}
     h1{font-size:34px;line-height:1.1;margin:8px 0 6px}
@@ -73,6 +78,10 @@
     .map{width:100%;height:380px;border:0;display:block}
 
     footer{padding:28px 0;color:var(--muted);border-top:var(--border);font-size:14px;text-align:center}
+      /* Reveal animations (reduced motion aware) */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s, transform .5s}
+    .reveal.show{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none}}
   </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-03MKEF4E3X"></script>
@@ -105,6 +114,8 @@
     }
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <header>
@@ -122,7 +133,7 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero reveal">
       <div class="container">
         <div class="kicker">Hassas üretim • Modern tasarım</div>
         <h1>Ronilab</h1>
@@ -130,18 +141,18 @@
       </div>
     </section>
 
-    <section id="hakkimizda">
+    <section id="hakkimizda" class="reveal">
       <div class="container">
         <div class="panel">
           <h2 class="section-title">Hakkımızda</h2>
-          <p>Ronilab, 2025 yılında İstanbul’da kurulmuştur. Müşterilerine <strong>hassas SLA (Stereolithography)</strong> ve <strong>FDM (Fused Deposition Modeling)</strong> teknolojileriyle üretim hizmetleri, ayrıca yüksek çözünürlüklü <strong>ürün tarama</strong> ve <strong>tersine mühendislik</strong> çözümleri sunar.</p>
-          <p>Deneyimli mühendis kadromuzla <strong>savunma sanayi</strong>, <strong>kalıp</strong> ve <strong>otomotiv</strong> sektörlerinde 3B baskı prototipleri, düşük hacimli üretim parçaları ve mühendislik doğrulama modelleri geliştiriyoruz. Hedefimiz, her üretimde estetik, işlevsellik ve dayanıklılığı bir arada sunmaktır.</p>
-          <p>Kalite odaklı yaklaşımımız ve sürdürülebilir üretim anlayışımız ile Türkiye'nin yenilikçi 3B üretim merkezlerinden biri olmayı amaçlıyoruz.</p>
+          <p>Ronilab, 2025 yılında İstanbul’da kurulmuş bir <strong>3B baskı ve ürün tarama mühendislik firmasıdır</strong>. Yüksek hassasiyetli <strong>SLA (Stereolithography)</strong> ve <strong>FDM (Fused Deposition Modeling)</strong> teknolojileriyle <strong>prototip üretimi</strong>, <strong>hızlı prototipleme</strong> ve <strong>tersine mühendislik</strong> hizmetleri sunuyoruz.</p>
+          <p>Deneyimli mühendis ekibimiz, <strong>savunma sanayi</strong>, <strong>kalıp imalatı</strong> ve <strong>otomotiv sektörü</strong> başta olmak üzere birçok endüstride <strong>3D modelleme</strong>, <strong>ürün doğrulama</strong> ve <strong>seri öncesi üretim</strong> projelerinde çözüm ortağıdır.</p>
+          <p>Hedefimiz, her projede <strong>kalite, doğruluk ve tekrarlanabilirlik</strong> ilkelerini koruyarak; Türkiye’nin en güvenilir <strong>3D baskı merkezi</strong> olmaktır. Ronilab; <strong>3B baskı hizmeti</strong>, <strong>ürün tarama (3D scanning)</strong> ve <strong>endüstriyel tasarım</strong> alanında yenilikçi çözümler sunarak mühendislik süreçlerinizi hızlandırır.</p>
         </div>
       </div>
     </section>
 
-    <section id="iletisim">
+    <section id="iletisim" class="reveal">
       <div class="container">
         <div class="grid">
           <div class="panel">
@@ -183,6 +194,11 @@
       const org = JSON.parse(ld?.textContent||'{}');
       console.assert(org.name === 'Ronilab', 'JSON-LD Organization adı beklenen değil');
     }catch(e){ console.warn('GA/JSON-LD testleri atlandı:', e); }
+        // Reveal IO
+    try{
+      const io=new IntersectionObserver((ents)=>ents.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    }catch(_){ document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show')); }
     console.groupEnd();
   </script>
 </body>
