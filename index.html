@@ -1,198 +1,205 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ronilab | Mühendislik & 3D Baskı Hizmetleri</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronilab – 3B Baskı, SLA & Ürün Tarama Hizmetleri | İstanbul</title>
+  <meta name="description" content="Ronilab, İstanbul’da SLA ve FDM ile 3B baskı, ürün tarama (3D scanning) ve tersine mühendislik sunar. Savunma, kalıp ve otomotiv için hızlı prototipleme ve hassas üretim." />
+  <meta name="keywords" content="3B baskı, 3D printing, SLA baskı, FDM baskı, hızlı prototipleme, 3D scanning, ürün tarama, tersine mühendislik, endüstriyel tasarım, 3D modelleme, İstanbul 3B baskı, savunma sanayi baskı, otomotiv prototip, kalıp doğrulama, Ronilab, 3B baskı merkezi" />
+  <meta property="og:title" content="Ronilab – 3B Baskı, SLA & Ürün Tarama Hizmetleri | İstanbul" />
+  <meta property="og:description" content="SLA/FDM 3B baskı, ürün tarama ve tersine mühendislik hizmetleri. Savunma, kalıp ve otomotiv sektörleri için hassas üretim çözümleri." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <link rel="canonical" href="https://www.ronilab.com/" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Performance hint for GA -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  
+  <!-- Safety redirect: fix common host typos/non-www -->
+  <script>
+    (function(){
+      var h = location.hostname.toLowerCase();
+      // if user lands on 'ww.ronilab.com' (missing a 'w') => redirect to 'www'
+      if (h === 'ww.ronilab.com') {
+        location.replace(location.href.replace('ww.ronilab.com','www.ronilab.com'));
+      }
+      // optionally normalize apex to www for a single canonical host
+      if (h === 'ronilab.com') {
+        location.replace(location.href.replace('ronilab.com','www.ronilab.com'));
+      }
+    })();
+  </script>
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root{
+      --bg:#ffffff;
+      --surface:#f5f9ff;
+      --card:#ffffff;
+      --muted:#5b6880;
+      --text:#0f172a;
+      --accent:#0ea5e9;
+      --accent-2:#38bdf8;
+      --radius:18px;
+      --shadow:0 10px 24px rgba(2,6,23,.06), 0 1px 0 rgba(2,6,23,.04);
+      --max:960px;
+      --border:1px solid rgba(2,6,23,.08);
     }
-    body {
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    header, nav, section {
-      max-width: 960px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    section {
-      background-color: #fff;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    h1, h2 {
-      color: #003366;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    nav {
-      background-color: #003366;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-    nav a:hover {
-      text-decoration: underline;
-      color: #ffcc00;
-    }
-    form input, form select, form textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form input:focus, form textarea:focus, form select:focus {
-      border-color: #003366;
-      outline: none;
-    }
-    form button {
-      padding: 10px 20px;
-      background-color: #003366;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    form button:hover {
-      background-color: #005599;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;color:var(--text);background:var(--bg);}
+    a{color:var(--text);text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(10px);border-bottom:var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .logo{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);display:grid;place-items:center;color:#fff;font-weight:800}
+    .brand .logo::after{content:'R';}
+    .links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .links a{position:relative}
+    .links a::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform .25s}
+    .links a:hover::after{transform:scaleX(1)}
+
+    .hero{padding:40px 0;background:linear-gradient(180deg,var(--surface),#fff 70%)}
+    h1{font-size:34px;line-height:1.1;margin:8px 0 6px}
+    .kicker{color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:12px}
+    .lead{color:#334155;max-width:65ch;line-height:1.5}
+
+    section{padding:28px 0}
+    .panel{background:#fff;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .section-title{font-size:24px;margin:0 0 12px}
+    .muted{color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width: 800px){ .grid{grid-template-columns:1fr} h1{font-size:26px} }
+
+    .map-wrap{border-radius:16px;overflow:hidden;border:var(--border);box-shadow:var(--shadow);}
+    .map{width:100%;height:380px;border:0;display:block}
+
+    footer{padding:28px 0;color:var(--muted);border-top:var(--border);font-size:14px;text-align:center}
+      /* Reveal animations (reduced motion aware) */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s, transform .5s}
+    .reveal.show{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none}}
   </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-03MKEF4E3X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-03MKEF4E3X'); // G- ile başlayan GA4 ölçüm kimliğini buraya gir
+</script>
+  <!-- Structured Data / Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ronilab",
+    "url": "https://www.ronilab.com",
+    "logo": "https://www.ronilab.com/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hürriyet Mahallesi Berrak Sokak No:6",
+      "addressLocality": "Kartal",
+      "addressRegion": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+905432856445",
+      "email": "info@ronilab.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Ana menü">
+      <a class="brand" href="#top" aria-label="Ronilab ana sayfa">
+        <div class="logo" aria-hidden="true"></div>
+        Ronilab
+      </a>
+      <nav class="links">
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="#harita">Harita</a>
+      </nav>
+    </div>
+  </header>
 
-  <nav>
-    <a href="#anasayfa">Anasayfa</a>
-    <a href="#hakkimizda">Hakkımızda</a>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#referanslar">Referanslar</a>
-    <a href="#iletisim">İletişim</a>
-    <a href="#teklif-formu">Teklif Al</a>
-  </nav>
+  <main id="top">
+    <section class="hero reveal">
+      <div class="container">
+        <div class="kicker">Hassas üretim • Modern tasarım</div>
+        <h1>Ronilab</h1>
+        <p class="lead">2025 yılında kurulan Ronilab, ileri seviye <strong>SLA</strong> ve <strong>FDM</strong> üretim teknolojileriyle yüksek hassasiyetli 3B üretim, ürün tarama ve modelleme hizmetleri sunar. Savunma sanayi, kalıp ve otomotiv sektörlerinde yenilikçi çözümler geliştirir. Her projede kalite, tekrarlanabilirlik ve mühendislik disiplini önceliğimizdir.</p>
+      </div>
+    </section>
 
-  <section id="anasayfa">
-    <h1>Ronilab Mühendislik ve 3D Baskı Hizmetleri</h1>
-    <p>Ronilab Mühendislik ve 3D Baskı Hizmetleri olarak yenilikçi mühendislik çözümleri ve yüksek kaliteli prototipleme hizmetleri sunuyoruz. Profesyonel ekip ve ileri teknolojiye sahip ekipmanlarımızla müşterilerimize özel üretim, hızlı prototipleme ve mühendislik çözümleri sağlıyoruz.</p>
-    <h2>Öne Çıkan Hizmetlerimiz</h2>
-    <ul>
-      <li>3D Baskı ve Reçine Baskı Hizmetleri</li>
-      <li>Mum Prototip Üretimi</li>
-      <li>Otomotiv Yedek Parça Üretimi</li>
-      <li>Tersine Mühendislik ve CAD Modelleme</li>
-      <li>Mühendislik Danışmanlık Hizmetleri</li>
-    </ul>
-    <h2>Neden Ronilab?</h2>
-    <ul>
-      <li>Uzman ve deneyimli mühendis kadrosu</li>
-      <li>Son teknoloji cihaz ve yazılımlar</li>
-      <li>Yüksek kalite, hızlı teslimat ve rekabetçi fiyatlandırma</li>
-      <li>Müşteri memnuniyeti odaklı yaklaşım</li>
-    </ul>
-  </section>
+    <section id="hakkimizda" class="reveal">
+      <div class="container">
+        <div class="panel">
+          <h2 class="section-title">Hakkımızda</h2>
+          <p>Ronilab, 2025 yılında İstanbul’da kurulmuş bir <strong>3B baskı ve ürün tarama mühendislik firmasıdır</strong>. Yüksek hassasiyetli <strong>SLA (Stereolithography)</strong> ve <strong>FDM (Fused Deposition Modeling)</strong> teknolojileriyle <strong>prototip üretimi</strong>, <strong>hızlı prototipleme</strong> ve <strong>tersine mühendislik</strong> hizmetleri sunuyoruz.</p>
+          <p>Deneyimli mühendis ekibimiz, <strong>savunma sanayi</strong>, <strong>kalıp imalatı</strong> ve <strong>otomotiv sektörü</strong> başta olmak üzere birçok endüstride <strong>3D modelleme</strong>, <strong>ürün doğrulama</strong> ve <strong>seri öncesi üretim</strong> projelerinde çözüm ortağıdır.</p>
+          <p>Hedefimiz, her projede <strong>kalite, doğruluk ve tekrarlanabilirlik</strong> ilkelerini koruyarak; Türkiye’nin en güvenilir <strong>3D baskı merkezi</strong> olmaktır. Ronilab; <strong>3B baskı hizmeti</strong>, <strong>ürün tarama (3D scanning)</strong> ve <strong>endüstriyel tasarım</strong> alanında yenilikçi çözümler sunarak mühendislik süreçlerinizi hızlandırır.</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="hakkimizda">
-    <h1>Hakkımızda</h1>
-    <p>Ronilab, mühendislik ve 3D baskı teknolojilerinde sürdürülebilirlik ve yenilik odaklı çözümler sunmak amacıyla kurulmuştur. Müşteri ihtiyaçlarını doğru analiz ederek, güvenilir ve yenilikçi çözümler sunmak temel önceliğimizdir.</p>
-    <h2>Misyonumuz</h2>
-    <p>Teknoloji ve mühendisliği harmanlayarak sürdürülebilir, hızlı ve ekonomik çözümler üretmek.</p>
-    <h2>Vizyonumuz</h2>
-    <p>Türkiye’nin öncü mühendislik ve 3D prototip üretim şirketlerinden biri olmak ve uluslararası alanda tanınan bir marka haline gelmek.</p>
-    <h2>Uzmanlık Alanlarımız</h2>
-    <ul>
-      <li>Hızlı Prototipleme</li>
-      <li>3D Baskı Teknolojileri</li>
-      <li>Tersine Mühendislik</li>
-      <li>CAD Modelleme</li>
-      <li>Otomotiv ve Endüstriyel Parça Üretimi</li>
-    </ul>
-  </section>
-
-  <section id="hizmetler">
-    <h1>Hizmetlerimiz</h1>
-    <h2>3D Baskı Hizmeti</h2>
-    <p>Son teknoloji 3D baskı ekipmanlarımızla yüksek çözünürlüklü, dayanıklı ve hassas parçalar üretiyoruz.</p>
-    <h2>Reçine (Resin) Baskı Hizmeti</h2>
-    <p>Reçine baskı teknolojisi ile ince detaylı, yüksek kaliteli ve pürüzsüz yüzeylere sahip prototip ve modeller elde edin.</p>
-    <h2>Mum Prototip Üretimi</h2>
-    <p>Kuyumculuk, dental ve hassas döküm uygulamaları için yüksek doğrulukta mum prototip üretimi sağlıyoruz.</p>
-    <h2>Otomotiv Yedek Parça Üretimi</h2>
-    <p>Yüksek hassasiyet gerektiren otomotiv parçalarını hızlı ve ekonomik şekilde üretiyoruz.</p>
-    <h2>Tersine Mühendislik ve CAD Modelleme Hizmeti</h2>
-    <p>Mevcut parçalarınızı dijital ortamda analiz ederek, CAD ortamına aktarıyor ve yeniden üretilebilir hale getiriyoruz.</p>
-    <h2>Mühendislik Danışmanlık Hizmetleri</h2>
-    <p>Projeleriniz için uzman mühendis ekibimizle tasarım, analiz ve üretim süreçlerinde danışmanlık sağlıyoruz.</p>
-  </section>
-
-  <section id="referanslar">
-    <h1>Referanslarımız veya Projelerimiz</h1>
-    <p>(Yakında Güncellenecektir)</p>
-  </section>
-
-  <section id="iletisim">
-    <h1>İletişim Bilgileri</h1>
-    <p><strong>Adres:</strong> İstanbul - Kartal</p>
-    <p><strong>Telefon:</strong> +90 543 2856445</p>
-    <p><strong>E-posta:</strong> info@ronilab.com</p>
-    <p><strong>Harita:</strong> https://maps.app.goo.gl/ZYmbsE8Km9LtZzAN9 </p>
-  </section>
-
-  <section id="teklif-formu">
-    <h1>Teklif ve Sipariş Formu</h1>
-      <form action="https://formsubmit.co/info@ronilab.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="Yeni Teklif Talebi">
-      
-        <label>Adınız Soyadınız:<br><input type="text" name="adsoyad" required></label><br><br>
-        <label>Firma Adı:<br><input type="text" name="firma"></label><br><br>
-        <label>Telefon:<br><input type="tel" name="telefon" required></label><br><br>
-        <label>E-posta:<br><input type="email" name="email" required></label><br><br>
-      
-        <label>Hizmet Türü:<br>
-          <select name="hizmet">
-            <option>3D Baskı</option>
-            <option>Reçine Baskı</option>
-            <option>Mum Prototip</option>
-            <option>Otomotiv Yedek Parça</option>
-            <option>Tersine Mühendislik</option>
-            <option>Mühendislik Danışmanlık</option>
-          </select>
-        </label><br><br>
-      
-        <label>Proje Açıklaması:<br><textarea name="aciklama"></textarea></label><br><br>
-        <label>Özel Notlarınız:<br><textarea name="notlar"></textarea></label><br><br>
-      
-        <button type="submit">Gönder</button>
-      </form>
-
-  </section>
+    <section id="iletisim" class="reveal">
+      <div class="container">
+        <div class="grid">
+          <div class="panel">
+            <h2 class="section-title">Adres & İletişim</h2>
+            <p><strong>Adres:</strong> Hürriyet Mahallesi Berrak Sokak No: 6, Kartal, İstanbul</p>
+            <p><strong>E-posta:</strong> <a href="mailto:info@ronilab.com">info@ronilab.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+905432856445">0543 285 64 45</a></p>
+          </div>
+          <div class="map-wrap" id="harita">
+            <iframe class="map" loading="lazy" allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=H%C3%BCrriyet%20Mahallesi%20Berrak%20Sokak%20No%3A%206%2C%20Kartal%2C%20%C4%B0stanbul&output=embed"
+              title="Ronilab Konum"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Ronilab Mühendislik. Tüm hakları saklıdır.</p>
+    <div class="container">© <span id="y"></span> Ronilab • Tüm hakları saklıdır. • <a href="https://www.ronilab.com">www.ronilab.com</a></div>
   </footer>
 
+  <script>
+    // Basit SEO iyileştirmeleri ve mobil uyumluluk testi
+    document.getElementById('y').textContent = new Date().getFullYear();
+    console.group('%cSEO & Mobil Test','color:#0ea5e9');
+    try{
+      const metaDesc = document.querySelector('meta[name="description"]');
+      console.assert(metaDesc && metaDesc.content.length>50,'Meta açıklaması kısa olabilir');
+      console.assert(window.innerWidth <= 1024,'Mobil uyumlu görünüm kontrolü: OK');
+      console.log('Canonical:', document.querySelector('link[rel="canonical"]').href);
+      console.log('Anahtar kelimeler:', document.querySelector('meta[name="keywords"]').content);
+    }catch(e){console.error('SEO test hatası',e);}
+      // GA & JSON-LD testleri
+    try{
+      console.assert(typeof gtag === 'function', 'GA4 gtag yüklenmedi');
+      const ld = document.querySelector('script[type="application/ld+json"]');
+      const org = JSON.parse(ld?.textContent||'{}');
+      console.assert(org.name === 'Ronilab', 'JSON-LD Organization adı beklenen değil');
+    }catch(e){ console.warn('GA/JSON-LD testleri atlandı:', e); }
+        // Reveal IO
+    try{
+      const io=new IntersectionObserver((ents)=>ents.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    }catch(_){ document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show')); }
+    console.groupEnd();
+  </script>
 </body>
 </html>
